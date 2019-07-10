@@ -44,7 +44,7 @@ def welcome():
     """ List of available API"""
     return (
         
-        f"Welcome to Hawai APi<br/>"        
+        f"Welcome to Hawai API<br/>"        
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
@@ -57,70 +57,83 @@ def welcome():
 @app.route("/api/v1.0/precipitation")
 def precipitation(): 
     
-    greatestdate = dt.date(2017, 8, 23)
+    prev_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+    print(prev_year)
     months_list = session.query(Measurement.date,Measurement.prcp).\
-                    filter(Measurement.date >= greatestdate).all()
-    months_dict = dict()
-    [months_dict [t [0]].append(t [1]) if t [0] in list(months_dict.keys()) 
-    else months_dict.update({t [0]: [t [1]]}) for t in months_list]
-    return jsonify(months_dict)
+                    filter(Measurement.date >= prev_year).all()
+    precip = {date: prcp for date, prcp in months_list}
+    print(precip)
+    return jsonify(precip)    
     
     
-
 #Return a JSON list of stations from the dataset.
-@app.route("/api/v1.0/stations<br/>")
+@app.route("/api/v1.0/stations")
 def stations():
-    unique_stations = session.query(Measurement.station).distinct().all()
+    unique_stations = session.query(Station.station).all()
+    print(unique_stations)
     return jsonify(unique_stations)
                 
 
-#query for the dates and temperature observations from a year from the last data point.
-#Return a JSON list of Temperature Observations (tobs) for the previous year.                   
+# #query for the dates and temperature observations from a year from the last data point.
+# #Return a JSON list of Temperature Observations (tobs) for the previous year.                   
 
-@app.route("/api/v1.0/tobs<br/>")
+@app.route("/api/v1.0/tobs")
 def temperature_observations():
-    """
-     query for the dates and temperature observations from a year from the last data point.
-     """
-    temperature_tobs = session.query(Measurements.tobs).\
-        filter(Measurement.tobs > prev_year).\
+    temperature_tobs = session.query(Measurement.tobs).\
+        filter(Measurement.date > prev_year).\
         all()
     return jsonify(temperature_tobs)
                    
                    
-#/api/v1.0/<start> and /api/v1.0/<start>/<end>
-#Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
-#When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
-#When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.              
+# #/api/v1.0/<start> and /api/v1.0/<start>/<end>
+# #Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
+# #When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
+# #When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.              
                    
-@app.route("/api/v1.0/<start>")              
-def start(date):
-    Starting_temperature = "select date, min(tobs), avg(tobs), max(tobs)\
-        from Measurement where date >= '" + date + "' group by date"
-    Start_temperature_List = pd.read_sql_query(Starting_temperature)
-    Start_temperature_List = [tuple(x) for x in Start_temperature_List.values]
-    Start_temperature_dict = {}
-    for temp in Start_temp_List:
-        Temps = { 'MinTemp': temp[1], 'AvgTemp': i[2], 'MaxTemp':temp[3]}
-        Start_temperature_dict[temp[0]] = Temps
-    return jsonify(Start_temperature_dict) 
-                   
-                
-                   
-                   
-@app.route("/api/v1.0/<start>/<end>")
-def start_end(start,end):
-     TempStatQ = "select date, min(tobs), avg(tobs), max(tobs)\
-               from Measurement where date >= '" + start + "' and \
-               date <='" + end + "' group by date"                    
-     Start_temperature_List = pd.read_sql_query(Starting_temperature)
-     Start_temperature_List = [tuple(x) for x in Start_temperature_List.values]
-     Start_temperature_dict = {}
-     for temp in Start_temp_List:
-         Temps = { 'MinTemp': temp[1], 'AvgTemp': i[2], 'MaxTemp':temp[3]}
-         Start_temperature_dict[temp[0]] = Temps
-     return jsonify(Start_temperature_dict) 
-         
+@app.route("/api/v1.0/<start>")
+def stats(start=None):
+    """Return TMIN, TAVG, TMAX."""
+
+    # Select statement
+    sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
+    
+    # calculate TMIN, TAVG, TMAX for dates greater than start
+    results = session.query(*sel).\
+        filter(Measurement.date >= start).all()
+    print(results)
+    # Unravel results into a 1D array and convert to a list
+    temps = list(np.ravel(results))
+    print(temps)
+    return jsonify(temps)
+
+
+@app.route("/api/v1.0/<start>/<end>")              
+def stats_end(start=None, end=None):
+    """Return TMIN, TAVG, TMAX."""
+
+    # Select statement
+    sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
+
+    if not end:
+        # calculate TMIN, TAVG, TMAX for dates greater than start
+        results = session.query(*sel).\
+            filter(Measurement.date >= start).all()
+        print(results)
+        # Unravel results into a 1D array and convert to a list
+        temps = list(np.ravel(results))
+        print(temps)
+        return jsonify(temps)
+    
+# calculate TMIN, TAVG, TMAX with start and stop
+    results = session.query(*sel).\
+        filter(Measurement.date >= start).\
+        filter(Measurement.date <= end).all()
+    print(results)
+    # Unravel results into a 1D array and convert to a list
+    temps = list(np.ravel(results))
+    print(temps)
+    return jsonify(temps)
+
 
 
 if __name__ == "__main__":
