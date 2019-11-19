@@ -38,11 +38,7 @@ The final report includes the following:
 
 #### Climate App
 
-Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
-
-* Use FLASK to create your routes.
-
-### Routes
+###### Routes
 
 * `/`
 
