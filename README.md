@@ -38,7 +38,7 @@ The final report includes the following:
 
 #### Climate App
 
-* Home page.
+* A home page.
 
 * A JSON representatio of a dictionary using date as the key and prcp as the value
 
