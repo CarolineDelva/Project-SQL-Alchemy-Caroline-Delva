@@ -61,7 +61,7 @@ The final report includes the following:
 
 ## Output
 
-#### Climate Analysis and Exploration
+#### * Climate Analysis and Exploration
 
 
 ![precipitation](Images/precipitation.png)
@@ -69,7 +69,7 @@ The final report includes the following:
 
 #### Precipitation Analysis
 
-![precipitation dataframe](Images/precipitiondataframe.png)
+![precipitation dataframe](Images/precipitiondataframe.PNG)
 
 ![station-histogram](Images/station-histogram.png)
 
