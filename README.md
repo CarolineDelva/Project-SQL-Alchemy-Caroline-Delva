@@ -8,25 +8,23 @@ I completed this project during my time at the [Columbia Engineering Data Analyt
 
 ## Project Description
 
-The purpose of this project is to perform a climate analysis and data exploration for the [climate database](https://github.com/CarolineDelva/SurfUp-SQL-Alchemy-Project/tree/master/Resources) and to create a Flask API based on these queries .
+The purpose of this project is to perform a climate analysis and data exploration for the [climate database](https://github.com/CarolineDelva/SurfUp-SQL-Alchemy-Project/tree/master/Resources) and to create a Flask API based on these queries.
+
+The final report includes the following:
 
 #### Climate Analysis and Exploration
 
-To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using 
+* A start date and end date for your trip. Make sure that your vacation range is approximately 3-15 days total.
 
-* Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
+* An engine to connect to the sqlite database.
 
-* Choose a start date and end date for your trip. Make sure that your vacation range is approximately 3-15 days total.
-
-* Use SQLAlchemy `create_engine` to connect to your sqlite database.
-
-* Use SQLAlchemy `automap_base()` to reflect your tables into classes and save a reference to those classes called `Station` and `Measurement`.
+* Tables reflected into classes and a reference called `Station` and `Measurement`.
 
 ### Precipitation Analysis
 
-* Design a query to retrieve the last 12 months of precipitation data.
+* A query to retrieve the last 12 months of precipitation data for the `date` and `prcp values.
 
-* Select only the `date` and `prcp` values.
+
 
 * Load the query results into a Pandas DataFrame and set the index to the date column.
 
