@@ -22,43 +22,21 @@ The final report includes the following:
 
 ### Precipitation Analysis
 
-* A query to retrieve the last 12 months of precipitation data for the `date` and `prcp values.
+* A query to retrieve the last 12 months of precipitation data for the `date` and `prcp` values.
 
-
-
-* Load the query results into a Pandas DataFrame and set the index to the date column.
-
-* Sort the DataFrame values by `date`.
-
-* Plot the results using the DataFrame `plot` method.
-
-  ![precipitation](Images/precipitation.png)
-
-* Use Pandas to print the summary statistics for the precipitation data.
+* A plot of the results
 
 ### Station Analysis
 
-* Design a query to calculate the total number of stations.
+* A query that calculates the total number of stations.
 
-* Design a query to find the most active stations.
-
-  * List the stations and observation counts in descending order.
-
-  * Which station has the highest number of observations?
-
-  * Hint: You may need to use functions such as `func.min`, `func.max`, `func.avg`, and `func.count` in your queries.
-
+* A query that finds the most active stations and their highest number of observations.
+  
 * Design a query to retrieve the last 12 months of temperature observation data (tobs).
 
-  * Filter by the station with the highest number of observations.
+* A plot the results as a histogram with `bins=12`.
 
-  * Plot the results as a histogram with `bins=12`.
-
-    ![station-histogram](Images/station-histogram.png)
-
-- - -
-
-## Step 2 - Climate App
+### Climate App
 
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 
@@ -100,6 +78,13 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
 * Use Flask `jsonify` to convert your API data into a valid JSON response object.
 
+## Output
+
+ ![precipitation](Images/precipitation.png)
+
+
+
+    ![station-histogram](Images/station-histogram.png)
 
 
 
