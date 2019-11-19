@@ -12,7 +12,7 @@ The purpose of this project is perfoming a climate analysis in Honolulu, Hawaii.
 
 #### Climate Analysis and Exploration
 
-To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using 
 
 * Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
 
@@ -103,6 +103,6 @@ Now that you have completed your initial analysis, design a Flask API based on t
 * Use Flask `jsonify` to convert your API data into a valid JSON response object.
 
 
-## Copyright
 
-Data Boot Camp ©2019. All Rights Reserved.
+
+SQLAlchemy ORM queries, Pandas, and Matplotlib.
