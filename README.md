@@ -8,7 +8,7 @@ I completed this project during my time at the [Columbia Engineering Data Analyt
 
 ## Project Description
 
-The purpose of this project is perfoming a climate analysis in Honolulu, Hawaii.
+The purpose of this project is to perform a climate analysis and data exploration for the [climate database](https://github.com/CarolineDelva/SurfUp-SQL-Alchemy-Project/tree/master/Resources) and to create a Flask API based on these queries .
 
 #### Climate Analysis and Exploration
 
