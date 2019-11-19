@@ -61,12 +61,22 @@ The final report includes the following:
 
 ## Output
 
- ![precipitation](Images/precipitation.png)
+#### Climate Analysis and Exploration
+
+
+![precipitation](Images/precipitation.png)
+
+
+#### Precipitation Analysis
+
+![precipitation dataframe](Images/precipitiondataframe.png)
+
+![station-histogram](Images/station-histogram.png)
 
 
 
-    ![station-histogram](Images/station-histogram.png)
+## Contact
+* [Visit my LinkedIn](https://www.linkedin.com/in/caroline-delva-5184a172/) 
+* [Visit my portfolio](https://carolinedelva.github.io/CarolineDelvaPortfolio/) 
 
 
-
-SQLAlchemy ORM queries, Pandas, and Matplotlib.
