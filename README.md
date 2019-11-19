@@ -32,9 +32,9 @@ The final report includes the following:
 
 * A query that finds the most active stations and their highest number of observations.
   
-* Design a query to retrieve the last 12 months of temperature observation data (tobs).
+* A query that retrieves the last 12 months of temperature observation data (tobs).
 
-* A plot the results as a histogram with `bins=12`.
+* A plot of the results as a histogram with `bins=12`.
 
 #### Climate App
 
@@ -75,6 +75,12 @@ The final report includes the following:
 #### * Station Analysis
 
 ![total number of Station](Images/totalnumberofstation.PNG)
+
+
+![Most active station](Images/mostactivestation.PNG)
+
+
+![highest observation](Images/highestobservation.PNG)
 
 ![station-histogram](Images/station-histogram.png)
 
