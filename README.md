@@ -38,15 +38,15 @@ The final report includes the following:
 
 #### Climate App
 
-* `/`
+* Home page.
 
-* `/api/v1.0/precipitation`
+* A JSON representatio of a dictionary using date as the key and prcp as the value
 
-* `/api/v1.0/stations`
+* A JSON list of stations.
 
-* `/api/v1.0/tobs` 
+* A JSON list of Temperature Observations (tobs) for the previous year.
 
-* `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
+* A JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
 
 ## Methods Used
 * Data Visualization
