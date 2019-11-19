@@ -40,7 +40,7 @@ The final report includes the following:
 
 * A home page.
 
-* A JSON representatio of a dictionary using date as the key and prcp as the value
+* A JSON representation of a dictionary using date as the key and prcp as the value.
 
 * A JSON list of stations.
 
@@ -83,6 +83,18 @@ The final report includes the following:
 ![highest observation](Images/highestobservation.PNG)
 
 ![station-histogram](Images/station-histogram.png)
+
+## Get Started
+
+
+1. Clone this repository (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/)).
+2. Find the [hawaii.sqlite](https://github.com/CarolineDelva/SurfUp-SQL-Alchemy-Project/blob/master/Resources/hawaii.sqlite) database in the Resources folder.
+
+
+3. Find the Python script as [climate_starter.ipynb](https://github.com/CarolineDelva/SurfUp-SQL-Alchemy-Project/blob/master/climate_starter.ipynb).
+
+4. Find the app code as [app.py](https://github.com/CarolineDelva/SurfUp-SQL-Alchemy-Project/blob/master/app.py).
+5. Run the script for each model in their own [Jupyter Notebook](https://jupyter.org/).
 
 
 
