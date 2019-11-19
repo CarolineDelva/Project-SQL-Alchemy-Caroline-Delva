@@ -38,8 +38,6 @@ The final report includes the following:
 
 #### Climate App
 
-###### Routes
-
 * `/`
 
 * `/api/v1.0/precipitation`
@@ -50,6 +48,15 @@ The final report includes the following:
 
 * `/api/v1.0/<start>` and `/api/v1.0/<start>/<end>`
 
+## Methods Used
+* Data Visualization
+* ORM Query
+* Database
+
+
+## Technologies
+* Python (Pandas, Matplotlib, Numpy, Datetime, SQLAlchemy, Flask) 
+* SQLite
 
 
 ## Output
