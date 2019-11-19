@@ -24,7 +24,7 @@ The final report includes the following:
 
 * A query to retrieve the last 12 months of precipitation data for the `date` and `prcp` values.
 
-* A plot of the results
+* A plot of the results.
 
 #### Station Analysis
 
