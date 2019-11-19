@@ -20,13 +20,13 @@ The final report includes the following:
 
 * Tables reflected into classes and a reference called `Station` and `Measurement`.
 
-### Precipitation Analysis
+#### Precipitation Analysis
 
 * A query to retrieve the last 12 months of precipitation data for the `date` and `prcp` values.
 
 * A plot of the results
 
-### Station Analysis
+#### Station Analysis
 
 * A query that calculates the total number of stations.
 
@@ -36,7 +36,7 @@ The final report includes the following:
 
 * A plot the results as a histogram with `bins=12`.
 
-### Climate App
+#### Climate App
 
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 
