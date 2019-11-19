@@ -63,13 +63,18 @@ The final report includes the following:
 
 #### * Climate Analysis and Exploration
 
+![engine](Images/engine.PNG)
+
+#### * Precipitation Analysis
+
+![precipitation dataframe](Images/precipitiondataframe.PNG)
 
 ![precipitation](Images/precipitation.png)
 
 
-#### Precipitation Analysis
+#### * Station Analysis
 
-![precipitation dataframe](Images/precipitiondataframe.PNG)
+![total number of Station](Images/totalnumberofstation.PNG)
 
 ![station-histogram](Images/station-histogram.png)
 
